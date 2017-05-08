@@ -2,5 +2,8 @@
 @import './variables';
 @import './mixins';
 
+@import './slick/slick';
+@import './slick/slick-theme';
+
 @import './header/header';
 @import './footer/footer';
