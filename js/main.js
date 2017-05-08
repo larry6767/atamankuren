@@ -1,5 +1,9 @@
 var $headerContext = $('.x-header');
+var $burgerMenu = $('.x-burger-menu', $headerContext);
 
-$('.x-burger', $headerContext).on('click', function() {
-  $('.mobile-navigation', $headerContext).slideToggle('mobile-navigation--active');
-})
+$burgerMenu.on('click', function() {
+  $('.x-mobile-navigation', $headerContext).slideToggle('mobile-navigation--active');
+  setTimeout(function () {
+    $burgerMenu.toggleClass('main-navigation__burger-menu--active');
+  }, 300);
+});
