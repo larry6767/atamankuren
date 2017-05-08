@@ -116,6 +116,10 @@
         width: 18px;
         height: 12px;
         margin: auto;
+
+        @include not-mobile {
+            display: none;
+        }
     }
 
     &__burger {
