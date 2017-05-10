@@ -11,6 +11,7 @@
         top: calc(50% - 150px);
         display: flex;
         justify-content: center;
+        z-index: 100;
 
         &:hover .hotel__frame-border {
             r: 140;
