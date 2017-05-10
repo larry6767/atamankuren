@@ -1,0 +1,129 @@
+.hotel {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0 70px;
+
+    &__title-wrapper {
+        position: absolute;
+        left: calc(50% - 150px);
+        top: calc(50% - 150px);
+        display: flex;
+        justify-content: center;
+
+        &:hover .hotel__frame-border {
+            r: 140;
+
+            @include mobile {
+                r: 110;
+            }
+        }
+
+        &:hover .hotel__frame-mask {
+            r: 135;
+
+            @include mobile {
+                r: 105;
+            }
+        }
+
+        &:hover .hotel__frame-border--pink {
+            stroke: $red;
+            r: 135;
+
+            @include mobile {
+                r: 105;
+            }
+        }
+    }
+
+    &__frame {
+        width: 300px;
+        height: 300px;
+        cursor: pointer;
+    }
+
+    &__frame-mask {
+        fill: $white;
+        stroke: $white;
+        transition: .3s r, fill;
+        stroke-width: 0;
+        r: 130;
+        cx: 150;
+        cy: 150;
+
+        @include mobile {
+            r: 100;
+        }
+    }
+
+    &__frame-border {
+        fill: none;
+        stroke: $white;
+        stroke-width: 10;
+        transition: .3s r;
+        r: 135;
+        cx: 150;
+        cy: 150;
+
+        @include mobile {
+            r: 105;
+        }
+
+        &--pink {
+            r: 130;
+            stroke-width: 3;
+            stroke: $pink;
+
+            @include mobile {
+                r: 100;
+            }
+        }
+    }
+
+    &__photo {
+        width: calc(50% - 5px);
+        height: 300px;
+        background: $beige no-repeat;
+        background-size: cover;
+        margin-bottom: 10px;
+
+        @include desktop {
+            height: 250px;
+        }
+
+        @include tablet {
+            height: 200px;
+        }
+
+        @include mobile {
+            width: 100%;
+            height: 200px;
+        }
+
+        &--1 {
+            background-image: url('../img/hotel1.jpg');
+        }
+
+        &--2 {
+            background-image: url('../img/hotel2.jpg');
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &--3 {
+            background-image: url('../img/hotel3.jpg');
+        }
+
+        &--4 {
+            background-image: url('../img/hotel4.jpg');
+
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+}
