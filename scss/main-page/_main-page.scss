@@ -7,6 +7,10 @@
     height: 70vh;
     background-size: cover;
 
+    @include tablet {
+        height: 500px;
+    }
+
     &__item {
         background: center no-repeat;
         background-size: cover;
