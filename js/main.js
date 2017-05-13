@@ -24,12 +24,14 @@ $(document).ready(function() {
   });
 
   $('.x-scroll').click(function() {
-    $("html, body").animate({
-      scrollTop: $($(this).attr("href")).offset().top + "px"
-      }, {
-        duration: 500,
-        easing: "swing"
-    });
-  return false;
+    if (location.href.substring(location.href.lastIndexOf('/')) === '/') {
+      $("html, body").animate({
+        scrollTop: $($(this).attr("href")).offset().top + "px"
+        }, {
+          duration: 500,
+          easing: "swing"
+      });
+      return false;
+    }
   });
 });
