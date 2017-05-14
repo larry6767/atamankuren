@@ -1,6 +1,22 @@
 $(document).ready(function() {
 
   var $headerContext = $('.x-header');
+
+  // header active class
+  var $headerLinks = $('.x-header-link', $headerContext);
+
+  $headerLinks.each(function(i) {
+    var url = location.href.substring(location.href.lastIndexOf('/'));
+    var href = $(this).attr('href') + '';
+    href = href.substring(href.indexOf('.') + 1);
+
+    console.log(url, href);
+    if (url === href) {
+      $(this).addClass('main-navigation__link--active');
+    }
+  });
+
+  // header-mobile
   var $burgerMenu = $('.x-burger-menu', $headerContext);
 
   $burgerMenu.on('click', function() {
@@ -23,7 +39,9 @@ $(document).ready(function() {
     arrows: false
   });
 
-  $('.x-scroll').click(function() {
+  // scroll main-page
+
+  $('.x-scroll').on('click', function() {
     if (location.href.substring(location.href.lastIndexOf('/')) === '/') {
       $("html, body").animate({
         scrollTop: $($(this).attr("href")).offset().top + "px"
@@ -34,4 +52,5 @@ $(document).ready(function() {
       return false;
     }
   });
+
 });

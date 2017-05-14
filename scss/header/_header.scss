@@ -1,6 +1,7 @@
 @import './mobile-navigation';
 
 .main-navigation {
+    background: $white;
 
     &::after {
         content: '';
@@ -88,6 +89,10 @@
         color: $beige;
         text-decoration: none;
         font-weight: bold;
+
+        &--active {
+            color: $red;
+        }
 
         &:hover {
             color: $red;
