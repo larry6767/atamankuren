@@ -10,7 +10,6 @@ $(document).ready(function() {
     var href = $(this).attr('href') + '';
     href = href.substring(href.indexOf('.') + 1);
 
-    console.log(url, href);
     if (url === href) {
       $(this).addClass('main-navigation__link--active');
     }
