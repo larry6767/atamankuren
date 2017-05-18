@@ -104,4 +104,23 @@ $(document).ready(function() {
     });
   }
 
+  // hotel page
+  var $hotelContext = $('.x-hotel-page');
+
+  $('.x-more', $hotelContext).on('click', function () {
+    $('.x-more-text', $hotelContext).slideToggle('hotel-description__text--active');
+    $(this).toggleClass('hotel-description__more--active');
+  });
+
+  $('.x-hotel-spa-slider').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: false
+  });
+
 });

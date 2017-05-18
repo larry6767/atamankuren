@@ -1,0 +1,235 @@
+.hotel-rooms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0 80px;
+
+    @include tablet {
+        padding: 40px 0 60px;
+    }
+
+    @include mobile {
+        padding: 40px 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 1200px;
+
+        @include desktop {
+            width: 1024px;
+        }
+
+        @include tablet {
+            width: 768px;
+            justify-content: space-around;
+        }
+
+        @include mobile {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        width: 300px;
+        margin-bottom: 20px;
+
+        @include mobile-tablet {
+            margin-bottom: 0;
+            width: 200px;
+        }
+    }
+
+    &__frame-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 40px 0 20px;
+
+        &:hover .hotel-rooms__frame-mask {
+            r: 165;
+            fill: rgba(255, 0, 0, 1);
+
+            @include desktop {
+                r: 145;
+            }
+
+            @include mobile-tablet {
+                r: 117;
+            }
+        }
+
+        &:hover .hotel-rooms__frame-border {
+            r: 175;
+
+            @include desktop {
+                r: 155;
+            }
+
+            @include mobile-tablet {
+                r: 125;
+            }
+        }
+
+        &:hover .hotel-rooms__weave {
+            top: 324px;
+
+            @include desktop {
+                top: 272px;
+            }
+
+            @include mobile-tablet {
+                top: 197px;
+            }
+        }
+
+        &:hover .hotel-rooms__description {
+            display: block;
+        }
+
+        @include desktop {
+            width: 340px;
+            height: 340px;
+        }
+    }
+
+    &__frame {
+        display: inline-block;
+        width: 400px;
+        height: 400px;
+        cursor: pointer;
+
+        @include mobile-tablet {
+            width: 256px;
+            height: 256px;
+        }
+
+        &--template {
+            opacity: 0;
+            position: absolute;
+            z-index: -100;
+            top: 0;
+        }
+    }
+
+    &__frame-mask {
+        fill: white;
+        stroke: white;
+        transition: .3s r, fill;
+        stroke-width: 0;
+        r: 160;
+        cx: 200;
+        cy: 200;
+
+        @include desktop {
+            r: 140;
+            cx: 170;
+            cy: 170;
+        }
+
+        @include mobile-tablet {
+            r: 112;
+            cx: 128;
+            cy: 128;
+        }
+    }
+
+    &__frame-border {
+        fill: none;
+        stroke: $red;
+        stroke-width: 3;
+        transition: .3s r;
+        r: 170;
+        cx: 200;
+        cy: 200;
+
+        @include desktop {
+            r: 150;
+            cx: 170;
+            cy: 170;
+        }
+
+        @include mobile-tablet {
+            r: 120;
+            cx: 128;
+            cy: 128;
+        }
+    }
+
+    &__description {
+        position: absolute;
+        width: 280px;
+        text-align: center;
+        font: 14px/1.3 $PTserif;
+        color: $red;
+        top: 190px;
+        cursor: pointer;
+        left: 60;
+        display: none;
+        z-index: 11;
+
+        @include desktop {
+            width: 260px;
+            left: 40px;
+            top: 160px;
+        }
+
+        @include mobile-tablet {
+            top: 115px;
+            width: 200px;
+            left: 28px;
+        }
+    }
+
+    &__weave {
+        position: absolute;
+        transition: .3s top;
+        left: calc(50% - 95px);
+        z-index: 10;
+        top: 318px;
+        width: 190px;
+        height: 88px;
+
+        @include desktop {
+            top: 265px;
+        }
+
+        @include mobile-tablet {
+            width: 170px;
+            left: calc(50% - 85px);
+            top: 190px;
+        }
+    }
+
+    &__room-title {
+        font: 16px/1.3 $PTserif;
+        color: $red;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font: 14px/1.3 $PTserif;
+        color: $red;
+        width: 320px;
+        text-align: center;
+
+        @include desktop {
+            width: 280px;
+        }
+
+        @include mobile-tablet {
+            width: 220px;
+        }
+    }
+}

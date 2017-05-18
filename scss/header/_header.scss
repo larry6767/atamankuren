@@ -39,17 +39,17 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        height: 70px;
+        height: 80px;
         padding: 0;
         margin: 0;
         position: relative;
 
         @include desktop {
-            height: 63px;
+            height: 71px;
         }
 
         @include mobile-tablet {
-            height: 47px;
+            height: 61px;
         }
 
         @include mobile {
@@ -111,13 +111,17 @@
     &__logo {
         position: absolute;
         left: 0;
-        top: -16px;
+        top: -32px;
         z-index: 1000;
+
+        @include mobile-tablet {
+            top: -25px;
+        }
     }
 
     &__burger-menu {
         position: absolute;
-        top: 18px;
+        top: 24px;
         right: 25px;
         width: 18px;
         height: 12px;

@@ -84,27 +84,6 @@
         }
     }
 
-    // &__content {
-    //     background: $pink;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     padding: 0 20px;
-
-    //     &::before,
-    //     &::after {
-    //         content: '';
-    //         width: 100px;
-    //         height: 50px;
-    //         background: url('../img/weave--white.svg') no-repeat;
-    //         margin: 5px 0;
-    //     }
-
-    //     &::after {
-    //         transform: rotate(180deg);
-    //     }
-    // }
-
     &__title {
         font: 18px/1.3 $PTserif;
         color: $red;

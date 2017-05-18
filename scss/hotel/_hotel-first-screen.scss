@@ -1,0 +1,13 @@
+.hotel-first-screen {
+    width: 100%;
+    min-height: 700px;
+    background: center url('../img/hotel/first-screen-bg.jpg') no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile-tablet {
+        min-height: 500px;
+    }
+}

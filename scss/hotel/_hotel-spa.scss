@@ -1,0 +1,67 @@
+.hotel-spa {
+
+    &__slider {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 300px;
+        background: $pink;
+        background-size: cover;
+        box-shadow: 0 0 0 3px $white, 0 0 0 13px $pink;
+        padding: 10px 0;
+    }
+
+    &__item {
+        background: center no-repeat;
+        background-size: cover;
+
+        margin: 0 5px;
+
+        &--1 {
+            background-image: url('../img/hotel/spa-1.jpg');
+        }
+
+        &--2 {
+            background-image: url('../img/hotel/spa-2.jpg');
+        }
+    }
+
+    &__text-block {
+        position: relative;
+        z-index: 1;
+        background: $pink;
+        padding: 30px 0 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &::after {
+            position: absolute;
+            left: 0;
+            bottom: 10px;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 3px;
+            background: $white;
+        }
+    }
+
+    &__title {
+        font: 16px/1.3 $PTserif;
+        color: $red;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font: 16px/1.3 $PTserif;
+        color: $red;
+        width: 600px;
+        text-align: center;
+
+        @include mobile {
+            width: calc(100% - 20px);
+        }
+    }
+}
