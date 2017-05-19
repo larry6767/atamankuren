@@ -25,6 +25,22 @@ $(document).ready(function() {
     }, 300);
   });
 
+  // more link
+
+  (function () {
+    var timerId;
+    $('.x-more-link').on('mouseover', function (event) {
+      $('.x-more-block').addClass('navigation-more--active');
+      clearInterval(timerId);
+    });
+
+    $('.x-more-link').on('mouseleave', function (event) {
+      timerId = setTimeout(function () {
+        $('.x-more-block').removeClass('navigation-more--active');
+      }, 500);
+    });
+  }());
+
   // first-screen-slider
 
   $('.x-first-screen-slider').slick({
@@ -80,7 +96,7 @@ $(document).ready(function() {
 
         // create map-marker style
         myMark.iconStyle = new YMaps.IconStyle();
-        myMark.iconStyle.href = "https://www.avtoto.ru/images/icons/map_baloon.png";
+        myMark.iconStyle.href = "https://larry6767.github.io//img/map-marker.svg";
         myMark.iconStyle.size = new YMaps.Point(64, 64);
         myMark.iconStyle.offset = new YMaps.Point(-32, -63);
 

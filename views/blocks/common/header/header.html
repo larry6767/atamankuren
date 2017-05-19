@@ -1,7 +1,7 @@
 <header class="x-header">
   <nav class="main-navigation">
+    <!-- @include ./header-mobile.html -->
     <div class="main-navigation__wrapper">
-      <!-- @include ./header-mobile.html -->
       <ul class="main-navigation__list">
         <li class="main-navigation__item">
           <a class="main-navigation__link x-header-link" href="./">Главная</a>
@@ -12,19 +12,34 @@
         <li class="main-navigation__item">
           <a class="main-navigation__link x-header-link x-scroll" href="#hotel">Гостиница</a>
         </li>
-        <li class="main-navigation__item main-navigation__item--logo">
-          <a class="main-navigation__link x-header-link" href="./">
-            <img class="main-navigation__logo" src="img/logo.svg" alt="atamankuren">
-          </a>
+      </ul>
+
+      <div class="main-navigation__logo-wrapper">
+        <a class="main-navigation__link x-header-link" href="./">
+          <img class="main-navigation__logo" src="img/logo.svg" alt="atamankuren">
+        </a>
+      </div>
+
+      <ul class="main-navigation__list">
+        <li class="main-navigation__item main-navigation__item--long">
+          <a class="main-navigation__link x-header-link x-scroll" href="#organization">Организация праздников</a>
         </li>
-        <li class="main-navigation__item">
+        <li class="main-navigation__item main-navigation__item--tablet-hide">
           <a class="main-navigation__link x-header-link" href="./news.html">Новости</a>
         </li>
-        <li class="main-navigation__item">
-          <a class="main-navigation__link x-header-link" href="./contacts.html">Контакты</a>
-        </li>
-        <li class="main-navigation__item">
-          <a class="main-navigation__link x-header-link" href="./vacancies.html">Вакансии</a>
+        <li class="main-navigation__item main-navigation__item--more x-more-link">
+          <div class="main-navigation__link x-header-link">еще</div>
+          <ul class="navigation-more x-more-block">
+            <li class="navigation-more__item navigation-more__item--tablet-show">
+              <a class="main-navigation__link x-header-link" href="./news.html">Новости</a>
+            </li>
+            <li class="navigation-more__item">
+              <a class="main-navigation__link x-header-link" href="./contacts.html">Контакты</a>
+            </li>
+            <li class="navigation-more__item">
+              <a class="main-navigation__link x-header-link" href="./vacancies.html">Вакансии</a>
+            </li>
+          </ul>
         </li>
         <li class="main-navigation__burger-menu x-burger-menu">
           <div class="main-navigation__burger"></div>

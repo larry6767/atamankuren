@@ -20,6 +20,8 @@
     &__wrapper {
         width: 1200px;
         margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
 
         @include desktop {
             width: 1024px;
@@ -31,6 +33,7 @@
 
         @include mobile {
             width: 100%;
+            border-top: 1px solid $pink;
         }
     }
 
@@ -43,42 +46,43 @@
         padding: 0;
         margin: 0;
         position: relative;
+        width: 450px;
 
         @include desktop {
             height: 71px;
+            width: 380px;
         }
 
-        @include mobile-tablet {
+        @include tablet {
             height: 61px;
+            width: 280px;
         }
 
         @include mobile {
-            border-top: 1px solid $pink;
+            width: auto;
+            height: 61px;
         }
     }
 
     &__item {
-        width: 140px;
         text-align: center;
-
-        @include tablet {
-            width: 80px;
-        }
 
         @include mobile {
             display: none;
         }
 
-        &--logo {
-            width: 260px;
+        &--tablet-hide {
+
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &--more {
             position: relative;
 
-            @include mobile-tablet {
-                width: 200px;
-            }
-
-            @include mobile {
-                display: block;
+            @include desktop {
+                margin-right: 10px;
             }
         }
     }
@@ -90,6 +94,10 @@
         text-decoration: none;
         font-weight: bold;
 
+        @include desktop {
+            font-size: 14px;
+        }
+
         &--active {
             color: $red;
         }
@@ -99,23 +107,37 @@
             cursor: pointer;
         }
 
-        &:active {
-            color: $red;
-        }
-
         @include tablet {
             font-size: 12px;
+        }
+    }
+
+    &__logo-wrapper {
+        width: 260px;
+        position: relative;
+        text-align: center;
+
+        @include mobile-tablet {
+            width: 200px;
         }
     }
 
     &__logo {
         position: absolute;
         left: 0;
-        top: -32px;
+        top: 8px;
         z-index: 1000;
 
-        @include mobile-tablet {
-            top: -25px;
+        @include desktop {
+            top: -1px;
+        }
+
+        @include tablet {
+            top: 5px;
+        }
+
+        @include mobile {
+            top: 6px;
         }
     }
 
@@ -181,5 +203,45 @@
 
     &__burger-menu--active &__burger{
         background: rgba(0,0,0,0);
+    }
+}
+
+.navigation-more {
+    position: absolute;
+    top: 30px;
+    right: -20px;
+    padding: 20px;
+    z-index: 1000;
+    list-style-type: none;
+    border: 3px solid $pink;
+    background: $white;
+    border-radius: 2px;
+    display: none;
+
+    @include desktop {
+        right: -10px;
+    }
+
+    @include tablet {
+        right: -10px;
+    }
+
+    &--active {
+        display: block;
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        &--tablet-show {
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+        }
     }
 }
