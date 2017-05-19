@@ -123,4 +123,20 @@ $(document).ready(function() {
     arrows: false
   });
 
+  // lighbox option
+
+  lightbox.option({
+    'disableScrolling': true,
+    'albumLabel'      : 'Фото %1 из %2'
+  });
+
+  var $roomsContext = $('.x-room');
+
+  $('.x-room-album', $roomsContext).on('click', function () {
+    var $localContext = $(this).closest('.x-room');
+
+    $('.x-target-lightbox', $localContext).click();
+  });
+
+
 });
