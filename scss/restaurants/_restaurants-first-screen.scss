@@ -1,0 +1,22 @@
+.restaurants-first-screen {
+    width: 100%;
+    min-height: 700px;
+
+    @include mobile-tablet {
+        min-height: 500px;
+    }
+
+    &__parallax {
+        top: 0;
+        position: fixed;
+        z-index: -1;
+        background: center url('../img/first-screen-bg.jpg') no-repeat;
+        background-size: cover;
+        width: 100%;
+        min-height: 900px;
+    }
+
+    &__parallax-bg {
+        background: $red;
+    }
+}

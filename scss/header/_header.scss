@@ -208,7 +208,7 @@
 
 .navigation-more {
     position: absolute;
-    top: 30px;
+    top: 35px;
     right: -20px;
     padding: 20px;
     z-index: 1000;
@@ -220,10 +220,32 @@
 
     @include desktop {
         right: -10px;
+        top: 30px;
     }
 
     @include tablet {
         right: -10px;
+        top: 30px;
+        border: 2px solid $pink;
+    }
+
+    &::before {
+        position: absolute;
+        top: -12px;
+        right: 23px;
+        content: url('../img/triangle.svg');
+        display: block;
+        width: 20px;
+
+        @include desktop {
+            right: 10px;
+        }
+
+        @include tablet {
+            right: 10px;
+            width: 15px;
+            top: -9px;
+        }
     }
 
     &--active {

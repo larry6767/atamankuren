@@ -1,0 +1,245 @@
+.restaurants-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0 80px;
+    background: $white;
+
+    @include tablet {
+        padding: 40px 0 60px;
+    }
+
+    @include mobile {
+        padding: 40px 0;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 1200px;
+
+        @include desktop {
+            width: 1024px;
+        }
+
+        @include tablet {
+            width: 768px;
+            justify-content: space-around;
+        }
+
+        @include mobile {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        width: 300px;
+        margin-bottom: 20px;
+
+        @include mobile-tablet {
+            margin-bottom: 0;
+            width: 200px;
+        }
+    }
+
+    &__frame-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 40px 0 20px;
+
+        &:hover .restaurants-gallery__frame-mask {
+            r: 125;
+            fill: rgba(255, 0, 0, 1);
+
+            @include desktop {
+                r: 110;
+            }
+
+            @include mobile-tablet {
+                r: 117;
+            }
+        }
+
+        &:hover .restaurants-gallery__frame-border {
+            r: 132;
+
+            @include desktop {
+                r: 117;
+            }
+
+            @include mobile-tablet {
+                r: 125;
+            }
+        }
+
+        &:hover .restaurants-gallery__weave {
+            top: 237px;
+
+            @include desktop {
+                top: 197px;
+            }
+
+            @include mobile-tablet {
+                top: 208px;
+            }
+        }
+
+        &:hover .restaurants-gallery__description {
+            display: block;
+        }
+
+        @include desktop {
+            width: 256px;
+            height: 256px;
+        }
+    }
+
+    &__frame {
+        display: inline-block;
+        width: 300px;
+        height: 300px;
+        cursor: pointer;
+
+        @include desktop {
+            width: 256px;
+            height: 256px;
+        }
+
+        @include mobile-tablet {
+            width: 256px;
+            height: 256px;
+        }
+
+        &--template {
+            opacity: 0;
+            position: absolute;
+            z-index: -100;
+            top: 0;
+        }
+    }
+
+    &__frame-mask {
+        fill: white;
+        stroke: white;
+        transition: .3s r, fill;
+        stroke-width: 0;
+        r: 120;
+        cx: 150;
+        cy: 150;
+
+        @include desktop {
+            r: 105;
+            cx: 127;
+            cy: 127;
+        }
+
+        @include mobile-tablet {
+            r: 112;
+            cx: 128;
+            cy: 128;
+        }
+    }
+
+    &__frame-border {
+        fill: none;
+        stroke: $red;
+        stroke-width: 3;
+        transition: .3s r;
+        r: 127;
+        cx: 150;
+        cy: 150;
+
+        @include desktop {
+            r: 112;
+            cx: 127;
+            cy: 127;
+        }
+
+        @include mobile-tablet {
+            r: 120;
+            cx: 128;
+            cy: 128;
+        }
+    }
+
+    &__description {
+        position: absolute;
+        width: 280px;
+        text-align: center;
+        font: 14px/1.3 $PTserif;
+        color: $red;
+        top: 145px;
+        cursor: pointer;
+        left: 10;
+        display: none;
+        z-index: 11;
+
+        @include desktop {
+            width: 256px;
+            left: 0;
+            top: 122px;
+        }
+
+        @include mobile-tablet {
+            top: 115px;
+            width: 200px;
+            left: 28px;
+        }
+    }
+
+    &__weave {
+        position: absolute;
+        transition: .3s top;
+        left: calc(50% - 60px);
+        z-index: 10;
+        top: 232px;
+        width: 120px;
+        height: 88px;
+
+        @include desktop {
+            top: 191px;
+        }
+
+        @include mobile-tablet {
+            width: 120px;
+            left: calc(50% - 60px);
+            top: 202px;
+        }
+    }
+
+    &__room-title {
+        font: 16px/1.3 $PTserif;
+        color: $red;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font: 14px/1.3 $PTserif;
+        color: $red;
+        width: 320px;
+        text-align: center;
+
+        @include desktop {
+            width: 280px;
+        }
+
+        @include mobile-tablet {
+            width: 220px;
+        }
+    }
+
+    &__img-list {
+        display: none;
+    }
+}
