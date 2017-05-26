@@ -25,10 +25,10 @@ gulp.task('style', function () {
         .pipe(plumber())
         // .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
-        .pipe(inline_base64({
-            maxSize: 14 * 1024,
-            debug: true
-        }))
+        // .pipe(inline_base64({
+        //     maxSize: 14 * 1024,
+        //     debug: true
+        // }))
         .pipe(postcss([
             autoprefixer({
                 browsers: [
@@ -94,19 +94,32 @@ gulp.task('script', function () {
 });
 
 gulp.task('html', function () {
-    gulp.src('views/pages/**/*.html')
+    gulp.src('views/**/*.html')
         // .pipe(inlineImagePath({path:"build/img"})) // It cant serve paths like build/img/**/
-        .pipe(preprocess({
-            context: {
-                NODE_ENV: 'development',
-                logged_in: true,
-                DEBUG: true
-            }
-        })) //To set environment variables in-line
-        .pipe(injectSvg())
-        .pipe(inlineimg()) // less requests, but html has big size
-        .pipe(gulp.dest('build'))
-        .pipe(server.reload({ stream: true }));
+        // .pipe(preprocess({
+        //     context: {
+        //         NODE_ENV: 'development',
+        //         logged_in: true,
+        //         DEBUG: true
+        //     }
+        // })) //To set environment variables in-line
+        // .pipe(injectSvg())
+        // .pipe(inlineimg()) // less requests, but html has big size
+        .pipe(gulp.dest('build/views'));
+        // .pipe(server.reload({ stream: true }));
+});
+
+gulp.task('php', function () {
+  gulp.src([
+    'views/blocks/common/header/header.html',
+    'views/blocks/common/footer/footer.html'
+    ])
+        // .pipe(injectSvg())
+        // .pipe(inlineimg()) // less requests, but html has big size
+        .pipe(rename(function (path) {
+            path.extname = '.php'
+        }))
+        .pipe(gulp.dest(''));
 });
 
 gulp.task('copy', function () {
@@ -128,7 +141,8 @@ gulp.task('clean', function () {
 gulp.task('build', ['clean', 'images', 'symbols', 'fonts', 'script'], function () {
     gulp.start(
         'style',
-        'html'
+        'html',
+        'php'
     );
 });
 
@@ -142,6 +156,7 @@ gulp.task('serve', [], function () {
     // TODO: this is a problem with serving img paths in html. Now it is hacked width build/img/ instead of /img/
 
     gulp.watch('scss/**/*.{scss,sass}', ['style']);
+    gulp.watch('views/**/*.html', ['php']);
     gulp.watch('views/**/*.html', ['html']).on("change", server.reload);
     gulp.watch('js/**/*.js', ['script']).on("change", server.reload);
     gulp.watch('img/!**!/!*.svg', ['symbols']).on("change", server.reload);
