@@ -13,7 +13,7 @@ if ( have_posts() ) : query_posts('cat=5');
   while ( have_posts() ) : the_post(); ?>
 
     <div class="restaurants__item">
-      <a href="<?php get_field('restauratns_page_link'); ?>" class="restaurants__frame-wrapper">
+      <a href="<?php echo get_field('restaurants_page_link'); ?>" class="restaurants__frame-wrapper">
         <svg class="restaurants__frame">
           <g mask="url(#mask<?php echo $restaurants_i; ?>)">
             <image class="restaurants__img" xlink:href="<?php echo get_field('restaurants_background'); ?>" width="100%" height="100%">

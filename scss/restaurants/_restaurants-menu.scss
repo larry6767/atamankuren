@@ -1,6 +1,7 @@
 .restaurants-menu {
 
     &__slider {
+        overflow: hidden;
         position: relative;
         z-index: 2;
         width: 100%;
@@ -16,14 +17,7 @@
         background-size: cover;
         outline: none;
         margin: 0 5px;
-
-        &--1 {
-            background-image: url('../img/restaurants/food-1.jpg');
-        }
-
-        &--2 {
-            background-image: url('../img/restaurants/food-2.jpg');
-        }
+        height: 280px;
     }
 
     &__list-wrapper {
