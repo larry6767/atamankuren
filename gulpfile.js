@@ -109,18 +109,18 @@ gulp.task('html', function () {
         // .pipe(server.reload({ stream: true }));
 });
 
-gulp.task('php', function () {
-  gulp.src([
-    'views/blocks/common/header/header-main.html',
-    'views/blocks/common/footer/footer-main.html'
-    ])
-        // .pipe(injectSvg())
-        // .pipe(inlineimg()) // less requests, but html has big size
-        .pipe(rename(function (path) {
-            path.extname = '.php'
-        }))
-        .pipe(gulp.dest(''));
-});
+// gulp.task('php', function () {
+//   gulp.src([
+//     'views/blocks/common/header/header-main.html',
+//     'views/blocks/common/footer/footer-main.html'
+//     ])
+//         // .pipe(injectSvg())
+//         // .pipe(inlineimg()) // less requests, but html has big size
+//         .pipe(rename(function (path) {
+//             path.extname = '.php'
+//         }))
+//         .pipe(gulp.dest(''));
+// });
 
 gulp.task('copy', function () {
     gulp.src('**/*')
@@ -141,8 +141,8 @@ gulp.task('clean', function () {
 gulp.task('build', ['clean', 'images', 'symbols', 'fonts', 'script'], function () {
     gulp.start(
         'style',
-        'html',
-        'php'
+        'html'
+        // ,'php'
     );
 });
 
@@ -156,7 +156,7 @@ gulp.task('serve', [], function () {
     // TODO: this is a problem with serving img paths in html. Now it is hacked width build/img/ instead of /img/
 
     gulp.watch('scss/**/*.{scss,sass}', ['style']);
-    gulp.watch('views/**/*.html', ['php']);
+    // gulp.watch('views/**/*.html', ['php']);
     gulp.watch('views/**/*.html', ['html']).on("change", server.reload);
     gulp.watch('js/**/*.js', ['script']).on("change", server.reload);
     gulp.watch('img/!**!/!*.svg', ['symbols']).on("change", server.reload);

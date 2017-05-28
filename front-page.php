@@ -1,5 +1,5 @@
 <?php get_header('main'); ?>
-<section class="first-screen-slider x-first-screen-slide">
+<section class="first-screen-slider x-first-screen-slider">
 
   <?php
     if ( have_posts() ) : query_posts('cat=6');
