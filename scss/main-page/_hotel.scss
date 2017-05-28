@@ -103,24 +103,14 @@
             height: 200px;
         }
 
-        &--1 {
-            background-image: url('../img/hotel1.jpg');
-        }
-
-        &--2 {
-            background-image: url('../img/hotel2.jpg');
+        &--mobile-none {
 
             @include mobile {
                 display: none;
             }
         }
 
-        &--3 {
-            background-image: url('../img/hotel3.jpg');
-        }
-
-        &--4 {
-            background-image: url('../img/hotel4.jpg');
+        &--mobile-none {
 
             @include mobile {
                 display: none;

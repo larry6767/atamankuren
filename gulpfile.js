@@ -111,8 +111,8 @@ gulp.task('html', function () {
 
 gulp.task('php', function () {
   gulp.src([
-    'views/blocks/common/header/header.html',
-    'views/blocks/common/footer/footer.html'
+    'views/blocks/common/header/header-main.html',
+    'views/blocks/common/footer/footer-main.html'
     ])
         // .pipe(injectSvg())
         // .pipe(inlineimg()) // less requests, but html has big size

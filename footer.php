@@ -1,21 +1,28 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package atamankuren
+ */
 
-    </main>
-    <footer class="main-footer">
-      <img src="<?php echo get_template_directory_uri(); ?>/build/img/footer-logo.svg" alt="atamankuren" class="main-footer__logo">
-      <div class="main-footer__text">Мы в социальных сетях:</div>
-      <div class="main-footer__social-block">
-        <a href="#" class="main-footer__button main-footer__button--vk">vk</a>
-        <a href="#" class="main-footer__button main-footer__button--inst">inst</a>
-      </div>
-      <div class="main-footer__text">По вопросам сотрудничества свяжитесь с нами</div>
-      <a href="tel:+78630000000" class="main-footer__phone-link">+7 (863) 000-00-00</a>
-      <div class="main-footer__copyright">&copy; 2001 - 2017 ООО "АтаманКурень"</div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://api-maps.yandex.ru/1.1/index.xml"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/build/js/slick.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/build/js/lightbox.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/build/js/main.js"></script>
-    <?php wp_footer(); ?>
-  </body>
+?>
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'atamankuren' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'atamankuren' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'atamankuren' ), 'atamankuren', '<a href="https://automattic.com/" rel="designer">Larry Glebov</a>' ); ?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
+</body>
 </html>

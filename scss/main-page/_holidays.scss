@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('../img/features-bg.jpg') no-repeat;
+    background: $beige no-repeat;
     background-size: cover;
     padding: 40px 0 80px;
     margin: 0 0 80px;
@@ -136,7 +136,7 @@
         width: 354px;
         height: 200px;
         background: $beige no-repeat;
-        background-position: center;
+        background-position: top;
         background-size: 100%;
         margin-bottom: 3px;
 
@@ -148,19 +148,6 @@
         @include mobile-tablet {
             width: 274px;
             height: 180px;
-        }
-
-        &--1 {
-            background-image: url('../img/feature1.jpg');
-        }
-
-        &--2 {
-            background-image: url('../img/feature2.jpg');
-            background-position: top;
-        }
-
-        &--3 {
-            background-image: url('../img/feature3.jpg');
         }
     }
 

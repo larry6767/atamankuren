@@ -14,15 +14,6 @@
     &__item {
         background: center no-repeat;
         background-size: cover;
-
-        &--1 {
-            background-image: url('../img/first-screen-bg.jpg');
-        }
-        &--2 {
-            background-image: url('../img/first-screen-bg2.jpg');
-        }
-        &--3 {
-            background-image: url('../img/first-screen-bg3.jpg');
-        }
+        height: 100%;
     }
 }

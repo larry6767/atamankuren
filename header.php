@@ -1,61 +1,49 @@
-<html lang="ru">
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package atamankuren
+ */
+
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
-<meta charset="UTF-8">
+<meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AtamanKuren</title>
-<link href="<?php echo get_template_directory_uri(); ?>/build/css/all.min.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=PT+Serif&amp;subset=cyrillic" rel="stylesheet">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
 <?php wp_head(); ?>
 </head>
-<body>
-  <header class="x-header">
-    <nav class="main-navigation">
-      <!-- @include ./header-mobile.html -->
-      <div class="main-navigation__wrapper">
-        <ul class="main-navigation__list">
-          <li class="main-navigation__item">
-            <a class="main-navigation__link x-header-link" href="./" data-href="./">Главная</a>
-          </li>
-          <li class="main-navigation__item">
-            <a class="main-navigation__link x-header-link x-scroll" href="#restaurants" data-href="./restaurants.html">Рестораны</a>
-          </li>
-          <li class="main-navigation__item">
-            <a class="main-navigation__link x-header-link x-scroll" href="#hotel" data-href="./hotel.html">Гостиница</a>
-          </li>
-        </ul>
 
-        <div class="main-navigation__logo-wrapper">
-          <a class="main-navigation__link x-header-link" href="./">
-            <img class="main-navigation__logo" src="<?php echo get_template_directory_uri(); ?>/build/img/logo.svg" alt="atamankuren">
-          </a>
-        </div>
+<body <?php body_class(); ?>>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'atamankuren' ); ?></a>
 
-        <ul class="main-navigation__list">
-          <li class="main-navigation__item main-navigation__item--long">
-            <a class="main-navigation__link x-header-link x-scroll" href="#organization" data-href="./index.html">Организация праздников</a>
-          </li>
-          <li class="main-navigation__item main-navigation__item--tablet-hide">
-            <a class="main-navigation__link x-header-link" href="./news.html" data-href="./news.html">Новости</a>
-          </li>
-          <li class="main-navigation__item main-navigation__item--more x-more-link">
-            <div class="main-navigation__link x-header-link">еще</div>
-            <ul class="navigation-more x-more-block">
-              <li class="navigation-more__item navigation-more__item--tablet-show">
-                <a class="main-navigation__link x-header-link" href="./news.html">Новости</a>
-              </li>
-              <li class="navigation-more__item">
-                <a class="main-navigation__link x-header-link" href="./contacts.html" data-href="./contacts.html">Контакты</a>
-              </li>
-              <li class="navigation-more__item">
-                <a class="main-navigation__link x-header-link" href="./vacancies.html" data-href="./vacancies.html">Вакансии</a>
-              </li>
-            </ul>
-          </li>
-          <li class="main-navigation__burger-menu x-burger-menu">
-            <div class="main-navigation__burger"></div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<?php
+			if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php
+			endif;
+
+			$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) : ?>
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			<?php
+			endif; ?>
+		</div><!-- .site-branding -->
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'atamankuren' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">

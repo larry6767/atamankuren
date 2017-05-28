@@ -1,10 +1,23 @@
-<html lang="ru">
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package atamankuren
+ */
+
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
-<meta charset="UTF-8">
+<meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AtamanKuren</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
 <link href="<?php echo get_template_directory_uri(); ?>/build/css/all.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=PT+Serif&amp;subset=cyrillic" rel="stylesheet">
+
 <?php wp_head(); ?>
 </head>
 <body>
@@ -14,18 +27,26 @@
       <div class="main-navigation__wrapper">
         <ul class="main-navigation__list">
           <li class="main-navigation__item">
-            <a class="main-navigation__link x-header-link" href="./" data-href="./">Главная</a>
+            <a class="main-navigation__link x-header-link
+            <?php if (is_front_page()) {?>
+              main-navigation__link--active
+            <?php }?>
+            " href="<?php echo home_url(); ?>">Главная</a>
           </li>
           <li class="main-navigation__item">
             <a class="main-navigation__link x-header-link x-scroll" href="#restaurants" data-href="./restaurants.html">Рестораны</a>
           </li>
           <li class="main-navigation__item">
-            <a class="main-navigation__link x-header-link x-scroll" href="#hotel" data-href="./hotel.html">Гостиница</a>
+            <a class="main-navigation__link x-header-link x-scroll
+            <?php if (is_page('hotel')) {?>
+              main-navigation__link--active
+            <?php }?>"
+            href="hotel">Гостиница</a>
           </li>
         </ul>
 
         <div class="main-navigation__logo-wrapper">
-          <a class="main-navigation__link x-header-link" href="./">
+          <a class="main-navigation__link x-header-link" href="<?php echo home_url(); ?>">
             <img class="main-navigation__logo" src="<?php echo get_template_directory_uri(); ?>/build/img/logo.svg" alt="atamankuren">
           </a>
         </div>

@@ -1,3 +1,15 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package atamankuren
+ */
+
+?>
 
     </main>
     <footer class="main-footer">
@@ -9,7 +21,7 @@
       </div>
       <div class="main-footer__text">По вопросам сотрудничества свяжитесь с нами</div>
       <a href="tel:+78630000000" class="main-footer__phone-link">+7 (863) 000-00-00</a>
-      <div class="main-footer__copyright">&copy; 2001 - 2017 ООО "АтаманКурень"</div>
+      <div class="main-footer__copyright">&copy; 2001 - <?php echo date('Y'); ?> ООО "<?php bloginfo('name'); ?>"</div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://api-maps.yandex.ru/1.1/index.xml"></script>
