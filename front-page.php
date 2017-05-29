@@ -1,57 +1,55 @@
 <?php get_header('main'); ?>
 <section class="first-screen-slider x-first-screen-slider">
 
-  <?php
-    if ( have_posts() ) : query_posts('cat=6');
-    while ( have_posts() ) : the_post(); ?>
+  <?php $sliders = get_field('main_page_slider');
+    foreach ($sliders as $slider => $key) { ?>
 
-      <div class="first-screen-slider__item" style="background-image: url('<?php echo get_field('main_first_screen_background'); ?>');"></div>
+      <div class="first-screen-slider__item" style="background-image: url('<?php echo $key['main_page_slider_photo']; ?>');"></div>
 
-      <?php
-    endwhile;
-  endif;
-  wp_reset_query();
-  ?>
+   <?php } ?>
 
 </section>
+
+
+
 <section class="restaurants x-restaurants" id="restaurants">
   <img src="<?php echo get_template_directory_uri(); ?>/img/our-restaurants.svg" alt="" class="restaurants__title">
   <div class="restaurants__wrapper">
     <?php get_template_part('template-parts/main-restaurant-item'); ?>
   </div>
 </section>
-<section class="holidays" style="background-image: url('<?php echo get_field('organization_background'); ?>');">
+
+
+
+<section class="holidays" style="background-image: url('<?php echo get_field('organization_bg'); ?>');">
   <div class="holidays__title-block">
     <img src="<?php echo get_template_directory_uri(); ?>/img/organization.svg" class="holidays__title" alt="Организация праздников">
     <div class="holidays__text">
       <?php echo get_field('organization_text'); ?>
     </div>
   </div>
+
   <div class="holidays__features-wrapper">
-    <div class="feature">
-      <div class="feature__img feature__img--1" style="background-image: url('<?php echo get_field('organization_image_1'); ?>');">
-      </div>
-      <div class="feature__text-wrapper">
-        <div class="feature__title"><?php echo get_field('organization_title_1'); ?></div>
-        <div class="feature__text"><?php echo get_field('organization_text_1'); ?></div>
-      </div>
-    </div>
+
+  <?php
+  $organization_items = get_field('organization_item');
+  foreach ($organization_items as $key => $item) { ?>
+
     <div class="feature feature--tablet-last">
-      <div class="feature__img feature__img--2" style="background-image: url('<?php echo get_field('organization_image_2'); ?>');"></div>
+      <div class="feature__img feature__img--2" style="background-image: url('<?php echo $item['organization_item_photo']; ?>');"></div>
       <div class="feature__text-wrapper">
-        <div class="feature__title"><?php echo get_field('organization_title_1'); ?></div>
-        <div class="feature__text"><?php echo get_field('organization_text_1'); ?></div>
+        <div class="feature__title"><?php echo $item['organization_item_title']; ?></div>
+        <div class="feature__text"><?php echo $item['organization_item_text']; ?></div>
       </div>
     </div>
-    <div class="feature">
-      <div class="feature__img feature__img--3" style="background-image: url('<?php echo get_field('organization_image_3'); ?>');"></div>
-      <div class="feature__text-wrapper">
-        <div class="feature__title"><?php echo get_field('organization_title_1'); ?></div>
-        <div class="feature__text"><?php echo get_field('organization_text_1'); ?></div>
-      </div>
-    </div>
+
+  <?php } ?>
+
   </div>
 </section>
+
+
+
 <section class="hotel">
   <div class="hotel__title-wrapper x-link-hotel">
     <svg class="hotel__frame">
