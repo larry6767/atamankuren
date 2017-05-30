@@ -51,7 +51,7 @@
 
 
 <section class="hotel">
-  <div class="hotel__title-wrapper x-link-hotel">
+  <a href="hotel" class="hotel__title-wrapper">
     <svg class="hotel__frame">
       <g mask="url(#mask_hotel)">
         <image class="hotel__title-img" xlink:href="<?php echo get_template_directory_uri(); ?>/img/hotel.svg" width="100%" height="100%">
@@ -62,7 +62,7 @@
       <circle r="135" cx="150" cy="150" class="hotel__frame-border"></circle>
       <circle r="130" cx="150" cy="150" class="hotel__frame-border hotel__frame-border--pink"></circle>
     </svg>
-  </div>
+  </a>
 
   <?php
   $hotel_photos = get_field('main_hotel_photos');

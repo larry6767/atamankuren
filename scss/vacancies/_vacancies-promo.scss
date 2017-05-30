@@ -51,7 +51,7 @@
 
     &__photo {
         box-sizing: border-box;
-        background: url('../img/vacancies-photo.jpg') no-repeat;
+        background: no-repeat;
         background-size: cover;
         border: 10px solid $white;
         width: calc(50% - 1px);
