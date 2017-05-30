@@ -23,24 +23,19 @@
 <body>
   <header class="x-header">
     <nav class="main-navigation">
-      <!-- @include ./header-mobile.html -->
+      <?php get_template_part('template-parts/header-mobile'); ?>
       <div class="main-navigation__wrapper">
         <ul class="main-navigation__list">
           <li class="main-navigation__item">
             <a class="main-navigation__link x-header-link
-            <?php if (is_front_page()) {?>
-              main-navigation__link--active
-            <?php }?>
-            " href="<?php echo home_url(); ?>">Главная</a>
+            <?php if (is_front_page()) { echo 'main-navigation__link--active'; } ?>" href="<?php echo home_url(); ?>">Главная</a>
           </li>
           <li class="main-navigation__item">
             <a class="main-navigation__link x-header-link x-scroll" href="#restaurants" data-href="./restaurants.html">Рестораны</a>
           </li>
           <li class="main-navigation__item">
             <a class="main-navigation__link x-header-link x-scroll
-            <?php if (is_page('hotel')) {?>
-              main-navigation__link--active
-            <?php }?>"
+            <?php if (is_page('hotel')) { echo 'main-navigation__link--active'; } ?>"
             href="hotel">Гостиница</a>
           </li>
         </ul>
@@ -56,19 +51,19 @@
             <a class="main-navigation__link x-header-link x-scroll" href="#organization" data-href="./index.html">Организация праздников</a>
           </li>
           <li class="main-navigation__item main-navigation__item--tablet-hide">
-            <a class="main-navigation__link x-header-link" href="./news.html" data-href="./news.html">Новости</a>
+            <a class="main-navigation__link x-header-link <?php if (is_page('news')) { echo 'main-navigation__link--active'; } ?>" href="./news.html" data-href="./news.html">Новости</a>
           </li>
           <li class="main-navigation__item main-navigation__item--more x-more-link">
             <div class="main-navigation__link x-header-link">еще</div>
             <ul class="navigation-more x-more-block">
               <li class="navigation-more__item navigation-more__item--tablet-show">
-                <a class="main-navigation__link x-header-link" href="./news.html">Новости</a>
+                <a class="main-navigation__link <?php if (is_page('news')) { echo 'main-navigation__link--active'; } ?> x-header-link" href="./news.html">Новости</a>
               </li>
               <li class="navigation-more__item">
-                <a class="main-navigation__link x-header-link" href="./contacts.html" data-href="./contacts.html">Контакты</a>
+                <a class="main-navigation__link <?php if (is_page('contacts')) { echo 'main-navigation__link--active'; } ?> x-header-link" href="./contacts.html" data-href="./contacts.html">Контакты</a>
               </li>
               <li class="navigation-more__item">
-                <a class="main-navigation__link x-header-link" href="./vacancies.html" data-href="./vacancies.html">Вакансии</a>
+                <a class="main-navigation__link <?php if (is_page('vacancies')) { echo 'main-navigation__link--active'; } ?> x-header-link" href="./vacancies.html" data-href="./vacancies.html">Вакансии</a>
               </li>
             </ul>
           </li>
