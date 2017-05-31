@@ -185,7 +185,7 @@
         color: $red;
         top: 150px;
         cursor: pointer;
-        left: 60;
+        left: 60px;
         display: none;
         z-index: 11;
 
@@ -207,6 +207,7 @@
         transition: .3s top;
         left: 87px;
         z-index: 10;
+        background-repeat: no-repeat;
 
         @include desktop {
             left: 57px;

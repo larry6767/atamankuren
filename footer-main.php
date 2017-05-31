@@ -24,6 +24,11 @@
       <div class="main-footer__copyright">&copy; 2001 - <?php echo date('Y'); ?> ООО "<?php bloginfo('name'); ?>"</div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          $(".load-container").delay(100).fadeOut(250);
+      });
+    </script>
     <script src="https://api-maps.yandex.ru/1.1/index.xml"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/build/js/slick.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/build/js/lightbox.min.js"></script>

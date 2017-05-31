@@ -37,6 +37,11 @@
                 r: 105;
             }
         }
+
+        &:hover .st3 {
+            transition: 1.5s fill;
+            fill: $red;
+        }
     }
 
     &__frame {

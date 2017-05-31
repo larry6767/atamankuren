@@ -2,19 +2,6 @@ $(document).ready(function() {
 
   var $headerContext = $('.x-header');
 
-  // header active class
-  var $headerLinks = $('.x-header-link', $headerContext);
-
-  $headerLinks.each(function(i) {
-    var url = location.href.substring(location.href.lastIndexOf('/'));
-    var href = $(this).attr('data-href') + '';
-    href = href.substring(href.indexOf('.') + 1);
-
-    if (url === href) {
-      $(this).addClass('main-navigation__link--active');
-    }
-  });
-
   // header-mobile
   var $burgerMenu = $('.x-burger-menu', $headerContext);
 
@@ -40,16 +27,6 @@ $(document).ready(function() {
       }, 500);
     });
   }());
-
-  // temporary navigastion
-
-  $('.x-link-hotel').on('click', function () {
-    location.href = './hotel.html';
-  });
-
-  $('.x-link-restaurants').on('click', function () {
-    location.href = './restaurants.html';
-  });
 
   // first-screen-slider
 

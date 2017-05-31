@@ -125,19 +125,23 @@
     &__logo {
         position: absolute;
         left: 0;
-        top: 8px;
+        // top: 8px;
+        top: 29px;
         z-index: 1000;
 
         @include desktop {
-            top: -1px;
+            // top: -1px;
+            top: 20px;
         }
 
         @include tablet {
-            top: 5px;
+            // top: 5px;
+            top: 22px;
         }
 
         @include mobile {
-            top: 6px;
+            // top: 6px;
+            top: 22px;
         }
     }
 
@@ -149,8 +153,25 @@
         height: 12px;
         margin: auto;
 
-        @include not-mobile {
-            display: none;
+        &--more {
+            width: 25px;
+            top: -6px;
+            right: -15px;
+            cursor: pointer;
+
+            @include desktop {
+                width: 18px;
+            }
+
+            @include tablet {
+                width: 18px;
+            }
+        }
+
+        &--mobile {
+            @include not-mobile {
+                display: none;
+            }
         }
     }
 
@@ -183,6 +204,57 @@
             content: "";
             display: block;
         }
+
+        &--more {
+            height: 3px;
+            background: $beige;
+
+            @include desktop {
+                height: 2px;
+            }
+
+            @include tablet {
+                height: 2px;
+            }
+
+            &::before {
+                background: $beige;
+                height: 3px;
+                top: 7px;
+                width: 25px;
+
+                @include desktop {
+                    height: 2px;
+                    top: 5px;
+                    width: 18px;
+                }
+
+                @include tablet {
+                    height: 2px;
+                    top: 5px;
+                    width: 18px;
+                }
+            }
+
+            &::after {
+                background: $beige;
+                height: 3px;
+                bottom: 7px;
+                width: 25px;
+
+                @include desktop {
+                    height: 2px;
+                    bottom: 5px;
+                    width: 18px;
+                }
+
+                @include tablet {
+                    height: 2px;
+                    bottom: 5px;
+                    width: 18px;
+                }
+            }
+        }
     }
 
     &__burger::after,
@@ -209,7 +281,7 @@
 .navigation-more {
     position: absolute;
     top: 35px;
-    right: -20px;
+    right: -37px;
     padding: 20px;
     z-index: 1000;
     list-style-type: none;
@@ -219,13 +291,13 @@
     display: none;
 
     @include desktop {
-        right: -10px;
+        right: -27px;
         top: 30px;
     }
 
     @include tablet {
-        right: -10px;
-        top: 30px;
+        right: -25px;
+        top: 20px;
         border: 2px solid $pink;
     }
 
@@ -244,7 +316,7 @@
         @include tablet {
             right: 10px;
             width: 15px;
-            top: -9px;
+            top: -12px;
         }
     }
 
